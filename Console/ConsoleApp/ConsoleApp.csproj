@@ -32,7 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.1.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPPlus.4.1.1\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,6 +57,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Data.Common\Data.Common.csproj">
+      <Project>{2FB5340C-2102-4629-B984-1526FA682340}</Project>
+      <Name>Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Data.Models\Data.Models.csproj">
+      <Project>{C5D3E220-D9C8-4755-8690-8929AB05FC11}</Project>
+      <Name>Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\Data\Data.csproj">
+      <Project>{f01d0a0a-97e3-4360-9bfb-48c062b63d7d}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\Services.FileReaderServices\NobelPrizeWinnerServices.csproj">
+      <Project>{BCF9D137-87E9-4B93-AA80-BA333E710285}</Project>
+      <Name>NobelPrizeWinnerServices</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

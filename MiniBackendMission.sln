@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data\Data.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "Console\ConsoleApp\ConsoleApp.csproj", "{209B3139-A9F4-466D-A883-3341A2256294}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A0456525-D811-4CCB-8AAA-42D789D1C7AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NobelPrizeWinnerServices", "Services\Services.FileReaderServices\NobelPrizeWinnerServices.csproj", "{BCF9D137-87E9-4B93-AA80-BA333E710285}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,10 @@ Global
 		{209B3139-A9F4-466D-A883-3341A2256294}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{209B3139-A9F4-466D-A883-3341A2256294}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{209B3139-A9F4-466D-A883-3341A2256294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF9D137-87E9-4B93-AA80-BA333E710285}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF9D137-87E9-4B93-AA80-BA333E710285}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF9D137-87E9-4B93-AA80-BA333E710285}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF9D137-87E9-4B93-AA80-BA333E710285}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +59,6 @@ Global
 		{2FB5340C-2102-4629-B984-1526FA682340} = {85DDA7EC-7121-42AC-9270-497AF1059D1C}
 		{F01D0A0A-97E3-4360-9BFB-48C062B63D7D} = {85DDA7EC-7121-42AC-9270-497AF1059D1C}
 		{209B3139-A9F4-466D-A883-3341A2256294} = {58EC5781-22DE-41C0-916F-AF133CD312CB}
+		{BCF9D137-87E9-4B93-AA80-BA333E710285} = {A0456525-D811-4CCB-8AAA-42D789D1C7AC}
 	EndGlobalSection
 EndGlobal

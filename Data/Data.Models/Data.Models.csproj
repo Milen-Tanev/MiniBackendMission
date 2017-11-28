@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Category.cs" />
-    <Compile Include="Enums\PrizeName.cs" />
     <Compile Include="NobelPrizeWinner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

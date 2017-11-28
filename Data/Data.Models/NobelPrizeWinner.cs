@@ -9,9 +9,11 @@
         public NobelPrizeWinner()
         {
         }
+        [Key]
+        public int Id { get; set; }
 
         [Required]
-        public ushort Year { get; set; }
+        public int Year { get; set; }
 
         [Required]
         public Category Category { get; set; }
@@ -19,7 +21,7 @@
         [Required]
         public string Name { get; set; }
 
-        public DateTime BirthDate { get; set; }
+        public string BirthDate { get; set; }
 
         public string BirthPlace { get; set; }
 
@@ -30,7 +32,7 @@
         public string FieldLanguage { get; set; }
 
         [Required]
-        public PrizeName PrizeName { get; set; }
+        public string PrizeName { get; set; }
 
         [Required]
         public string Motivation { get; set; }

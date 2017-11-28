@@ -2,11 +2,11 @@
 {
     public enum Category
     {
-        Physics,
-        Peace,
-        Medicine,
-        Literature,
-        Economics,
-        Chemistry
+        physics,
+        peace,
+        medicine,
+        literature,
+        economics,
+        chemistry
     }
 }
