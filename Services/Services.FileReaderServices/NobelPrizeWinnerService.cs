@@ -20,8 +20,8 @@
         {
             var winner = this.nobelPrizeWinners.All()
                 .Where(w => w.Year == nobelPrizeWinner.Year
-                && w.Name == nobelPrizeWinner.Name
-                && w.PrizeName == nobelPrizeWinner.PrizeName)
+                    && w.Name == nobelPrizeWinner.Name
+                    && w.PrizeName == nobelPrizeWinner.PrizeName)
                 .FirstOrDefault();
 
             if (winner == null)
@@ -30,7 +30,7 @@
             }
             else
             {
-                this.nobelPrizeWinners.Update(winner);
+                this.nobelPrizeWinners.Update(nobelPrizeWinner);
             }
 
             this.unitOfWork.Commit();

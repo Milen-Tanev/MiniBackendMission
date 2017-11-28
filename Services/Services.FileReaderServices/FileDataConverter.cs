@@ -10,7 +10,7 @@
     using Data.Models;
     using Data.Models.Enums;
 
-    public class FileReader : IFileReader
+    public class FileDataConverter : IFileDataConverter
     {
         public IEnumerable<NobelPrizeWinner> Read(FileInfo fileInfo)
         {

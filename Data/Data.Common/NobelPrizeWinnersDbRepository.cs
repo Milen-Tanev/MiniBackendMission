@@ -23,9 +23,9 @@
 
         public void Update(T entity)
         {
-            var e = this.DbSet.Find(entity);
-
-            var entry = Context.Entry(entity);
+            this.DbSet.Attach(entity);
+            var entry = this.Context.Entry(entity);
+            
             entry.State = EntityState.Modified;
         }
 

@@ -5,7 +5,7 @@
 
     using Data.Models;
 
-    public interface IFileReader
+    public interface IFileDataConverter
     {
         IEnumerable<NobelPrizeWinner> Read(FileInfo fileInfo);
     }
