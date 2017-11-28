@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.IO;
     using System.Linq;
 
     using OfficeOpenXml;
@@ -12,13 +11,17 @@
 
     public class FileDataConverter : IFileDataConverter
     {
-        public IEnumerable<NobelPrizeWinner> Read(FileInfo fileInfo)
-        {
-            var nobelPrizeWinners = new List<NobelPrizeWinner>();
-            var excel = new ExcelPackage(fileInfo);
+        private IList<NobelPrizeWinner> nobelPrizeWinners;
 
-            // To do: Handle errors
+        public FileDataConverter()
+        {
+            this.nobelPrizeWinners = new List<NobelPrizeWinner>();
+        }
+
+        public IList<NobelPrizeWinner> Read(ExcelPackage excel)
+        {
             ExcelWorksheet workSheet = excel.Workbook.Worksheets.First();
+
             for (var rowNumber = 2; rowNumber <= workSheet.Dimension.End.Row; rowNumber++)
             {
                 var year = ushort.Parse(workSheet.Cells[rowNumber, 1].Text);
@@ -46,7 +49,7 @@
                     Motivation = motivation
                 };
 
-                nobelPrizeWinners.Add(nobelPrizeWinner);
+                this.nobelPrizeWinners.Add(nobelPrizeWinner);
             }
  
             return nobelPrizeWinners;

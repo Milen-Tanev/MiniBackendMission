@@ -1,5 +1,6 @@
 ﻿namespace Data.Common
 {
+    using System;
     using System.Data.Entity;
 
     public class UnitOfWork : IUnitOfWork
@@ -8,7 +9,7 @@
 
         public UnitOfWork(DbContext context)
         {
-            this.context = context;
+            this.context = context ?? throw new ArgumentNullException("The DbContext in UnitOfWork cannot be null.");
         }
 
         public void Commit()

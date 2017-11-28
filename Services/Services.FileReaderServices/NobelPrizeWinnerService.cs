@@ -1,5 +1,6 @@
 ﻿namespace Services.NobePrizeWinnerServices
 {
+    using System;
     using System.Linq;
 
     using Data.Common;
@@ -12,8 +13,8 @@
 
         public NobelPrizeWinnerService(INobelPrizeWinnersDbRepository<NobelPrizeWinner> nobelPrizeWinners, IUnitOfWork unitOfWork)
         {
-            this.nobelPrizeWinners = nobelPrizeWinners;
-            this.unitOfWork = unitOfWork;
+            this.nobelPrizeWinners = nobelPrizeWinners ?? throw new ArgumentNullException("The DbRepository in NobelPrizeWinnerService cannot be null.");
+            this.unitOfWork = unitOfWork ?? throw new ArgumentNullException("The UnitOfWork in NobelPrizeWinnerService cannot be null.");
         }
 
         public void AddOrUpdate(NobelPrizeWinner nobelPrizeWinner)

@@ -1,12 +1,13 @@
 ﻿namespace Services.NobePrizeWinnerServices
 {
     using System.Collections.Generic;
-    using System.IO;
+
+    using OfficeOpenXml;
 
     using Data.Models;
 
     public interface IFileDataConverter
     {
-        IEnumerable<NobelPrizeWinner> Read(FileInfo fileInfo);
+        IList<NobelPrizeWinner> Read(ExcelPackage excel);
     }
 }

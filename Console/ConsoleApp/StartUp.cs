@@ -6,29 +6,28 @@
     using System.Reflection;
 
     using Ninject;
+    using OfficeOpenXml;
 
-    using Services.NobePrizeWinnerServices;
-    using Data;
     using Data.Common;
     using Data.Models;
+    using Services.NobePrizeWinnerServices;
 
     class StartUp
     {
         static void Main()
         {
-            var fileInfo = new FileInfo(@"C:\Users\Milen\Documents\Visual Studio 2017\Projects\MiniBackendMission\Files\Nobel Prize Winners.xlsx");
+            var fileInfo = new FileInfo("..\\..\\..\\..\\Files\\Nobel Prize Winners.xlsx");
 
             var kernel = new StandardKernel();
             kernel.Load(Assembly.GetExecutingAssembly());
-
             var context = kernel.Get<DbContext>();
             var repository = kernel.Get<INobelPrizeWinnersDbRepository<NobelPrizeWinner>>();
             var unitOfWork = kernel.Get<IUnitOfWork>();
+            var service = kernel.Get<INobelPrizeWinnerService>();
+            var fileDataConverter = kernel.Get<IFileDataConverter>();
 
-            var fileReader = new FileDataConverter();
-            var nobelPrizeWinners = fileReader.Read(fileInfo);
-                        
-            var service = new NobelPrizeWinnerService(repository, unitOfWork);
+            var excel = new ExcelPackage(fileInfo);
+            var nobelPrizeWinners = fileDataConverter.Read(excel);
 
             Console.Write("Extracting table");
 

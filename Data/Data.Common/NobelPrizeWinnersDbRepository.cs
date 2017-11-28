@@ -10,7 +10,7 @@
     {
         public NobelPrizeWinnersDbRepository(DbContext context)
         {
-            this.Context = context;
+            this.Context = context ?? throw new ArgumentNullException("The DbContext in NobelPrizeWinnersDbRepository cannot be null.");
             this.DbSet = this.Context.Set<T>();
         }
 
@@ -32,11 +32,6 @@
         public IQueryable<T> All()
         {
             return this.DbSet;
-        }
-
-        public IQueryable<T> Modified(Expression<Func<T, bool>> predicate)
-        {
-            return this.DbSet.Where(predicate);
         }
     }
 }

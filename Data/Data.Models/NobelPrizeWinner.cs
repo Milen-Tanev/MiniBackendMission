@@ -1,40 +1,54 @@
 ﻿namespace Data.Models
 {
-    using Data.Models.Enums;
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class NobelPrizeWinner : IComparable<NobelPrizeWinner>, IIdentifiable
+    using Data.Models.Enums;
+
+    public class NobelPrizeWinner : IComparable<NobelPrizeWinner>
     {
         public NobelPrizeWinner()
         {
         }
+
         [Key]
         public int Id { get; set; }
 
         [Required]
+        [Range(1900, 9999)]
         public int Year { get; set; }
 
         [Required]
         public Category Category { get; set; }
 
         [Required]
+        [MinLength(3)]
+        [MaxLength(200)]
         public string Name { get; set; }
-
+        
+        [MaxLength(50)]
         public string BirthDate { get; set; }
-
+        
+        [MaxLength(100)]
         public string BirthPlace { get; set; }
-
+        
+        [MaxLength(100)]
         public string Country {get; set; }
-
+        
+        [MaxLength(100)]
         public string Residence { get; set; }
-
+        
+        [MaxLength(100)]
         public string FieldLanguage { get; set; }
 
         [Required]
+        [MinLength(3)]
+        [MaxLength(120)]
         public string PrizeName { get; set; }
 
         [Required]
+        [MinLength(3)]
+        [MaxLength(600)]
         public string Motivation { get; set; }
 
         public int CompareTo(NobelPrizeWinner other)
@@ -52,7 +66,6 @@
             {
                 return 0;
             }
-
             return -1;
         }
     }

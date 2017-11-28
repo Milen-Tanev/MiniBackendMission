@@ -2,6 +2,7 @@
 {
     public enum Category
     {
+        none,
         physics,
         peace,
         medicine,

@@ -55,7 +55,7 @@
   <ItemGroup>
     <Compile Include="FileDataConverter.cs" />
     <Compile Include="Contracts\INobelPrizeWinnerService.cs" />
-    <Compile Include="Contracts\IFileReader.cs" />
+    <Compile Include="Contracts\IFileDataConverter.cs" />
     <Compile Include="NobelPrizeWinnerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

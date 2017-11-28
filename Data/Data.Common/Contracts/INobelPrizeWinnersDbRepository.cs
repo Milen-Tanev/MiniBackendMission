@@ -8,7 +8,7 @@
         DbSet<T> DbSet { get; }
 
         void Add(T entity);
-        IQueryable<T> All();
         void Update(T entity);
+        IQueryable<T> All();
     }
 }

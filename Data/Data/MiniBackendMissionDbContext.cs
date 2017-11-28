@@ -1,7 +1,8 @@
 ﻿namespace Data
 {
-    using Data.Models;
     using System.Data.Entity;
+
+    using Data.Models;
 
     public class MiniBackendMissionDbContext : DbContext
     {

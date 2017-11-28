@@ -2,7 +2,7 @@
 {
     using Data.Models;
 
-    interface INobelPrizeWinnerService
+    public interface INobelPrizeWinnerService
     {
         void AddOrUpdate(NobelPrizeWinner nobelPrizeWinner);
     }
