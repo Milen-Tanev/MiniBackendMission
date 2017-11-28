@@ -1,6 +1,8 @@
 ﻿namespace Data.Common
 {
-    public interface IUnitOfWork
+    using System;
+
+    public interface IUnitOfWork : IDisposable
     {
         void Commit();
     }

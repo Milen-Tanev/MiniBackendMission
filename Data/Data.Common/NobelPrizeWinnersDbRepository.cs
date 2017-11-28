@@ -1,7 +1,9 @@
 ﻿namespace Data.Common
 {
+    using System;
     using System.Data.Entity;
     using System.Linq;
+    using System.Linq.Expressions;
 
     public class NobelPrizeWinnersDbRepository<T> : INobelPrizeWinnersDbRepository<T>
         where T : class
@@ -23,15 +25,18 @@
 
         public void Update(T entity)
         {
-            this.DbSet.Attach(entity);
             var entry = this.Context.Entry(entity);
-            
             entry.State = EntityState.Modified;
         }
 
         public IQueryable<T> All()
         {
             return this.DbSet;
+        }
+
+        public IQueryable<T> Modified(Expression<Func<T, bool>> predicate)
+        {
+            return this.DbSet.Where(predicate);
         }
     }
 }
